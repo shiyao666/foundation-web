@@ -1,0 +1,45 @@
+#user_center {
+    background-color: #eee;
+}
+
+// 防止小屏适配问题
+.row {
+    max-width: 100%;
+}
+
+// 卡片混合器   
+@mixin card-container($background: #fff, $color:#000, $margin:0, $padding:0, $border:none, $radius:0, $shadow:none) {
+
+    background-color: $background;
+    color: $color;
+    margin: $margin;
+    padding: $padding;
+    border: $border;
+    border-radius: $radius;
+    box-shadow:#{$shadow};
+
+}
+
+// 卡片样式
+.card {
+    @include card-container(#ccc, #000, 2em, 2em, 0, 0, '0 0 0 4px #000');
+}
+
+// 修改按钮
+.edit_btn {
+    display: block;
+    padding: 0 0.2em;
+    float: right;
+}
+
+.container_part {
+    height: 50vh;
+}
+
+.info_part {
+    @include card-container(#fff, #000, 0, (1em 1em), 0, 0, '0 0 0 4px #000')
+}
+
+.record_part {
+    @include card-container(#fff, #000, (1em 0), (1em 1em), 0, 0, '0 0 0 4px #000')
+}
